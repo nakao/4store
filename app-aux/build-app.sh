@@ -12,14 +12,14 @@ sed -e 's/${AV}/'$version'/' -i "" 4store.app/Contents/Info.plist
 cp -r app-aux/Resources/* 4store.app/Contents/Resources/
 cp app-aux/MacOS/* 4store.app/Contents/MacOS/
 for i in src/frontend/4s-* src/backend/4s-* src/utilities/4s-{backend,cluster}-* src/utilities/4s-{dump,restore} src/http/4s-*; do
-	if test -x $i ; then
-		cp $i 4store.app/Contents/MacOS/bin/
-	fi
+        if test -x $i ; then
+                cp $i 4store.app/Contents/MacOS/bin/
+        fi
 done
-cp -p /usr/local/lib/librasqal*.dylib /usr/local/lib/libraptor*.dylib \
-	/sw/lib/libglib-2*.dylib /sw/lib/libintl*.dylib \
-	/sw/lib/libiconv*.dylib /sw/lib/libxml*.dylib /sw/lib/libpcre*.dylib \
-	/sw/lib/libintl*.dylib /sw/lib/libiconv*.dylib /sw/lib/libxml*.dylib \
-	/sw/lib/libpcre*.dylib /sw/lib/libreadline*.dylib \
-	/sw/lib/ncurses/libncurses*.dylib /sw/lib/libgthread-*.dylib \
-	4store.app/Contents/MacOS/lib/
+cp -p /opt/local/lib/librasqal*.dylib /opt/local/lib/libraptor*.dylib \
+        /opt/local/lib/libglib-2*.dylib /opt/local/lib/libintl*.dylib \
+        /opt/local/lib/libiconv*.dylib /opt/local/lib/libxml*.dylib /opt/local/lib/libpcre*.dylib \
+        /opt/local/lib/libintl*.dylib /opt/local/lib/libiconv*.dylib /opt/local/lib/libxml*.dylib \
+        /opt/local/lib/libpcre*.dylib /opt/local/lib/libreadline*.dylib \
+        /opt/local/lib/libncurses*.dylib /opt/local/lib/libgthread-*.dylib \
+        4store.app/Contents/MacOS/lib/
